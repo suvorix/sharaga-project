@@ -24,7 +24,7 @@ namespace carShowroom
             Environment.Exit(0);
         }
 
-        // Кнопка назад
+        // Кнопка назад 
         private void button2_Click(object sender, EventArgs e)
         {
             menu menu = new menu();
@@ -98,7 +98,7 @@ namespace carShowroom
                 // Проверка есть ли пустые поля
                 if (textBox1.Text != "" && textBox2.Text != "" && textBox4.Text != "" && textBox5.Text != "" && textBox6.Text != "" && comboBox1.Text != "")
                 {
-                    // Проверка полей на правильность ввода
+                    // Проверка полей на правильность ввода 
                     if (MainFunc.stringTest(textBox1.Text, @"^[a-zA-Zа-яА-Я]*$") && MainFunc.stringTest(textBox2.Text, @"^[a-zA-Zа-яА-Я]*$") && MainFunc.stringTest(textBox6.Text, @"^[a-zA-Zа-яА-Я]*$") && MainFunc.stringTest(textBox4.Text, @"^[0-9]*$") && MainFunc.stringTest(textBox5.Text, @"^[0-9]*$"))
                     {
                         button1.Enabled = true;
