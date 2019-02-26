@@ -45,7 +45,7 @@ namespace carShowroom
         {
             try
             {
-                // Таблица механиков
+                // Таблица механиков 
                 OleDbDataAdapter data1 = new OleDbDataAdapter(MainFunc.getAll("mechanic"));
                 DataTable table1 = new DataTable();
                 data1.Fill(table1);

@@ -12,3 +12,17 @@ F:\Nikita Suvorov\Производственная практика\carShowroom\
 F:\Nikita Suvorov\Производственная практика\carShowroom\obj\Debug\carShowroom.edit.resources
 F:\Nikita Suvorov\Производственная практика\carShowroom\obj\Debug\carShowroom.addOrder.resources
 F:\Nikita Suvorov\Производственная практика\carShowroom\obj\Debug\carShowroom.allOrder.resources
+F:\Nikita Suvorov\Производственная практика\sharaga-project\bin\Debug\carShowroom.exe.config
+F:\Nikita Suvorov\Производственная практика\sharaga-project\bin\Debug\carShowroom.exe
+F:\Nikita Suvorov\Производственная практика\sharaga-project\bin\Debug\carShowroom.pdb
+F:\Nikita Suvorov\Производственная практика\sharaga-project\obj\Debug\carShowroom.csprojAssemblyReference.cache
+F:\Nikita Suvorov\Производственная практика\sharaga-project\obj\Debug\carShowroom.add.resources
+F:\Nikita Suvorov\Производственная практика\sharaga-project\obj\Debug\carShowroom.addOrder.resources
+F:\Nikita Suvorov\Производственная практика\sharaga-project\obj\Debug\carShowroom.allOrder.resources
+F:\Nikita Suvorov\Производственная практика\sharaga-project\obj\Debug\carShowroom.edit.resources
+F:\Nikita Suvorov\Производственная практика\sharaga-project\obj\Debug\carShowroom.menu.resources
+F:\Nikita Suvorov\Производственная практика\sharaga-project\obj\Debug\carShowroom.Properties.Resources.resources
+F:\Nikita Suvorov\Производственная практика\sharaga-project\obj\Debug\carShowroom.csproj.GenerateResource.cache
+F:\Nikita Suvorov\Производственная практика\sharaga-project\obj\Debug\carShowroom.csproj.CoreCompileInputs.cache
+F:\Nikita Suvorov\Производственная практика\sharaga-project\obj\Debug\carShowroom.exe
+F:\Nikita Suvorov\Производственная практика\sharaga-project\obj\Debug\carShowroom.pdb

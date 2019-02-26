@@ -33,6 +33,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -56,6 +57,7 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel12 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -77,8 +79,6 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -161,6 +161,19 @@
             this.panel10.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.panel10.Size = new System.Drawing.Size(850, 305);
             this.panel10.TabIndex = 1;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.DimGray;
+            this.label11.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label11.ForeColor = System.Drawing.SystemColors.Control;
+            this.label11.Location = new System.Drawing.Point(0, 266);
+            this.label11.Name = "label11";
+            this.label11.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.label11.Size = new System.Drawing.Size(236, 34);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Количество записей: 0";
             // 
             // dataGridView1
             // 
@@ -419,6 +432,19 @@
             this.panel11.Size = new System.Drawing.Size(850, 305);
             this.panel11.TabIndex = 1;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.DimGray;
+            this.label13.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label13.ForeColor = System.Drawing.SystemColors.Control;
+            this.label13.Location = new System.Drawing.Point(0, 266);
+            this.label13.Name = "label13";
+            this.label13.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.label13.Size = new System.Drawing.Size(236, 34);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "Количество записей: 0";
+            // 
             // dataGridView2
             // 
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -660,32 +686,6 @@
             this.button2.Text = "Назад";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.DimGray;
-            this.label11.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label11.ForeColor = System.Drawing.SystemColors.Control;
-            this.label11.Location = new System.Drawing.Point(0, 266);
-            this.label11.Name = "label11";
-            this.label11.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.label11.Size = new System.Drawing.Size(236, 34);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "Количество записей: 0";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.DimGray;
-            this.label13.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label13.ForeColor = System.Drawing.SystemColors.Control;
-            this.label13.Location = new System.Drawing.Point(0, 266);
-            this.label13.Name = "label13";
-            this.label13.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.label13.Size = new System.Drawing.Size(236, 34);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "Количество записей: 0";
             // 
             // add
             // 
