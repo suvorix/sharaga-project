@@ -1,0 +1,14 @@
+F:\Nikita Suvorov\Производственная практика\carShowroom\bin\Debug\carShowroom.exe.config
+F:\Nikita Suvorov\Производственная практика\carShowroom\bin\Debug\carShowroom.exe
+F:\Nikita Suvorov\Производственная практика\carShowroom\bin\Debug\carShowroom.pdb
+F:\Nikita Suvorov\Производственная практика\carShowroom\obj\Debug\carShowroom.csprojAssemblyReference.cache
+F:\Nikita Suvorov\Производственная практика\carShowroom\obj\Debug\carShowroom.Properties.Resources.resources
+F:\Nikita Suvorov\Производственная практика\carShowroom\obj\Debug\carShowroom.csproj.GenerateResource.cache
+F:\Nikita Suvorov\Производственная практика\carShowroom\obj\Debug\carShowroom.csproj.CoreCompileInputs.cache
+F:\Nikita Suvorov\Производственная практика\carShowroom\obj\Debug\carShowroom.exe
+F:\Nikita Suvorov\Производственная практика\carShowroom\obj\Debug\carShowroom.pdb
+F:\Nikita Suvorov\Производственная практика\carShowroom\obj\Debug\carShowroom.menu.resources
+F:\Nikita Suvorov\Производственная практика\carShowroom\obj\Debug\carShowroom.add.resources
+F:\Nikita Suvorov\Производственная практика\carShowroom\obj\Debug\carShowroom.edit.resources
+F:\Nikita Suvorov\Производственная практика\carShowroom\obj\Debug\carShowroom.addOrder.resources
+F:\Nikita Suvorov\Производственная практика\carShowroom\obj\Debug\carShowroom.allOrder.resources
