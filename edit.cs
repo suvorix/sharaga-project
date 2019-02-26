@@ -78,7 +78,7 @@ namespace carShowroom
                 dataGridView2.DataSource = table2;
                 dataGridView2.Columns[0].Visible = false;
 
-                label13.Text = "Количество записей: " + table1.Rows.Count.ToString();
+                label13.Text = "Количество записей: " + table2.Rows.Count.ToString();
             }
             catch
             {
@@ -203,7 +203,7 @@ namespace carShowroom
                 // Проверка есть ли пустые поля
                 if (textBox7.Text != "" && textBox8.Text != "" && textBox9.Text != "" && textBox10.Text != "" && comboBox2.Text != "")
                 {
-                    if (MainFunc.stringTest(textBox9.Text, @"^[a-zA-Zа-яА-Я]*$") && MainFunc.stringTest(textBox7.Text, @"^[0-9]*$") && MainFunc.stringTest(textBox8.Text, @"^[0-9]*$"))
+                    if (MainFunc.stringTest(textBox9.Text, @"^[a-zA-Zа-яА-Я\-]*$") && MainFunc.stringTest(textBox7.Text, @"^[0-9]*$") && MainFunc.stringTest(textBox8.Text, @"^[0-9]*$"))
                     {
                         button1.Enabled = true;
                         return true;
