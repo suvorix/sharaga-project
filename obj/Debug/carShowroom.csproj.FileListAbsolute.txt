@@ -26,3 +26,5 @@ F:\Nikita Suvorov\Производственная практика\sharaga-proj
 F:\Nikita Suvorov\Производственная практика\sharaga-project\obj\Debug\carShowroom.csproj.CoreCompileInputs.cache
 F:\Nikita Suvorov\Производственная практика\sharaga-project\obj\Debug\carShowroom.exe
 F:\Nikita Suvorov\Производственная практика\sharaga-project\obj\Debug\carShowroom.pdb
+F:\Nikita Suvorov\Производственная практика\sharaga-project\obj\Debug\carShowroom.import.resources
+F:\Nikita Suvorov\Производственная практика\sharaga-project\obj\Debug\carShowroom.csproj.ResolveComReference.cache

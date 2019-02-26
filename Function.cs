@@ -10,7 +10,7 @@ namespace carShowroom
 {
     class Function
     {
-        string db_name = "db.mdb";
+        public string db_name = "db.mdb";
 
         public OleDbCommand sql(string query)
         {
