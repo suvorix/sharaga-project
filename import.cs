@@ -73,8 +73,8 @@ namespace carShowroom
                     doc.Bookmarks["number"].Range.Text = table1.Rows[0][0].ToString();
                     doc.Bookmarks["date"].Range.Text = table1.Rows[0][6].ToString();
                     doc.Bookmarks["worker"].Range.Text = table1.Rows[0][1].ToString() + " " + table1.Rows[0][2].ToString() + " " + table1.Rows[0][3].ToString();
-                    doc.Bookmarks["car"].Range.Text = table1.Rows[0][4].ToString() + " " + table1.Rows[0][5].ToString();
-                    doc.Bookmarks["orderName"].Range.Text = "Ремонт автомобиля " + table1.Rows[0][4].ToString() + " " + table1.Rows[0][5].ToString();
+                    doc.Bookmarks["car"].Range.Text = table1.Rows[0][5].ToString() + " " + table1.Rows[0][4].ToString();
+                    doc.Bookmarks["orderName"].Range.Text = "Ремонт автомобиля " + table1.Rows[0][5].ToString() + " " + table1.Rows[0][4].ToString();
                     doc.Bookmarks["price"].Range.Text = table1.Rows[0][7].ToString();
                 }
             }
@@ -130,18 +130,18 @@ namespace carShowroom
             var workBook = excelApp.Workbooks.Add(Type.Missing);
 
             var mechanic = workBook.ActiveSheet;
-            mechanic.Name = "Автомеханики";
+            mechanic.Name = "mechanic";
 
             //
             var mechanicCells = mechanic.Cells;
 
-            mechanic.Cells[1, 1] = "ID";
-            mechanic.Cells[1, 2] = "Табельный номер";
-            mechanic.Cells[1, 3] = "Фамилия";
-            mechanic.Cells[1, 4] = "Имя";
-            mechanic.Cells[1, 5] = "Отчество";
-            mechanic.Cells[1, 6] = "Стаж";
-            mechanic.Cells[1, 7] = "Разряд";
+            mechanic.Cells[1, 1] = "mechanic_id";
+            mechanic.Cells[1, 2] = "mechanic_number";
+            mechanic.Cells[1, 3] = "mechanic_surname";
+            mechanic.Cells[1, 4] = "mechanic_name";
+            mechanic.Cells[1, 5] = "mechanic_patronymic";
+            mechanic.Cells[1, 6] = "mechanic_exp";
+            mechanic.Cells[1, 7] = "mechanic_rank";
 
             OleDbCommand mechanicData = new OleDbCommand("SELECT * FROM mechanic;");
             mechanicData.Connection = ODConnect;
@@ -164,17 +164,17 @@ namespace carShowroom
             mechanic.Rows.AutoFit();
 
             var car = workBook.Sheets.Add(After: workBook.ActiveSheet);
-            car.Name = "Автомобили";
+            car.Name = "car";
 
             //
             var carCells = car.Cells;
 
-            car.Cells[1, 1] = "ID";
-            car.Cells[1, 2] = "Табельный номер";
-            car.Cells[1, 3] = "Марка";
-            car.Cells[1, 4] = "Модель";
-            car.Cells[1, 5] = "Тип кузова";
-            car.Cells[1, 6] = "Год";
+            car.Cells[1, 1] = "car_id";
+            car.Cells[1, 2] = "car_number";
+            car.Cells[1, 3] = "car_mark";
+            car.Cells[1, 4] = "car_name";
+            car.Cells[1, 5] = "car_type";
+            car.Cells[1, 6] = "car_year";
 
             OleDbCommand carData = new OleDbCommand("SELECT * FROM car;");
             carData.Connection = ODConnect;
@@ -196,17 +196,17 @@ namespace carShowroom
             car.Rows.AutoFit();
 
             var repair = workBook.Sheets.Add(After: workBook.ActiveSheet);
-            repair.Name = "Заказы";
+            repair.Name = "repair";
 
             //
             var repairCells = repair.Cells;
 
-            repair.Cells[1, 1] = "ID";
-            repair.Cells[1, 2] = "ID автомеханика";
-            repair.Cells[1, 3] = "ID автомобиля";
-            repair.Cells[1, 4] = "Дата начала работ";
-            repair.Cells[1, 5] = "Продолжительность ремонта";
-            repair.Cells[1, 6] = "Стоимость";
+            repair.Cells[1, 1] = "repair_id";
+            repair.Cells[1, 2] = "mechanic_id";
+            repair.Cells[1, 3] = "car_id";
+            repair.Cells[1, 4] = "repair_date";
+            repair.Cells[1, 5] = "repair_time";
+            repair.Cells[1, 6] = "repair_cost";
 
             OleDbCommand repairData = new OleDbCommand("SELECT * FROM repair;");
             repairData.Connection = ODConnect;
