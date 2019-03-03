@@ -47,23 +47,40 @@ namespace carShowroom
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (checkInput())
+            try
             {
-                OleDbDataAdapter data1 = new OleDbDataAdapter(MainFunc.sql("SELECT repair_id, (SELECT mechanic_surname FROM mechanic WHERE repair.mechanic_id = mechanic.mechanic_id) AS [m_surname], (SELECT mechanic_name FROM mechanic WHERE repair.mechanic_id = mechanic.mechanic_id) AS [m_name], (SELECT mechanic_patronymic FROM mechanic WHERE repair.mechanic_id = mechanic.mechanic_id) AS [m_patronymic], (SELECT car_name FROM car WHERE repair.car_id = car.car_id) AS [model_car], (SELECT car_mark FROM car WHERE repair.car_id = car.car_id) AS [mark_car], repair_date, repair_cost FROM repair WHERE repair_id = " + comboBox1.Text + ";"));
-                DataTable table1 = new DataTable();
-                data1.Fill(table1);
+                if (checkInput())
+                {
+                    OleDbDataAdapter data1 = new OleDbDataAdapter(MainFunc.sql("SELECT " +
+                        "repair_id, " +
+                        "(SELECT mechanic_surname FROM mechanic WHERE repair.mechanic_id = mechanic.mechanic_id) AS [m_surname], " +
+                        "(SELECT mechanic_name FROM mechanic WHERE repair.mechanic_id = mechanic.mechanic_id) AS [m_name], " +
+                        "(SELECT mechanic_patronymic FROM mechanic WHERE repair.mechanic_id = mechanic.mechanic_id) AS [m_patronymic], " +
+                        "(SELECT car_name FROM car WHERE repair.car_id = car.car_id) AS [model_car], " +
+                        "(SELECT car_mark FROM car WHERE repair.car_id = car.car_id) AS [mark_car], " +
+                        "repair_date, " +
+                        "repair_cost " +
+                        "FROM repair " +
+                        "WHERE repair_id = " + comboBox1.Text.Split(':')[0] + ";"));
+                    DataTable table1 = new DataTable();
+                    data1.Fill(table1);
 
 
-                Word.Application wordApp = new Word.Application();
-                Word.Document doc = wordApp.Documents.Add();
-                wordApp.Visible = true;
+                    Word.Application wordApp = new Word.Application();
+                    Word.Document doc = wordApp.Documents.Add(Environment.CurrentDirectory + "\\check.docx");
+                    wordApp.Visible = true;
 
-                Word.Range range = doc.Range();
-                range.Text = "Номер заказа: " + table1.Rows[0][0].ToString() + "\n" +
-                    "Мастер: " + table1.Rows[0][1].ToString() + " " + table1.Rows[0][2].ToString() + " " + table1.Rows[0][3].ToString() + "\n" +
-                    "Автомобиль: " + table1.Rows[0][4].ToString() + " " + table1.Rows[0][5].ToString() + "\n" +
-                    "Дата начала работ: " + table1.Rows[0][6].ToString() + "\n" +
-                    "Стоимость: " + table1.Rows[0][7].ToString() + "руб.\n";
+                    doc.Bookmarks["number"].Range.Text = table1.Rows[0][0].ToString();
+                    doc.Bookmarks["date"].Range.Text = table1.Rows[0][6].ToString();
+                    doc.Bookmarks["worker"].Range.Text = table1.Rows[0][1].ToString() + " " + table1.Rows[0][2].ToString() + " " + table1.Rows[0][3].ToString();
+                    doc.Bookmarks["car"].Range.Text = table1.Rows[0][4].ToString() + " " + table1.Rows[0][5].ToString();
+                    doc.Bookmarks["orderName"].Range.Text = "Ремонт автомобиля " + table1.Rows[0][4].ToString() + " " + table1.Rows[0][5].ToString();
+                    doc.Bookmarks["price"].Range.Text = table1.Rows[0][7].ToString();
+                }
+            }
+            catch
+            {
+                MessageBox.Show(this, "Произошла критическая ошибка!", "Критическая ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -74,12 +91,19 @@ namespace carShowroom
 
         private void import_Load(object sender, EventArgs e)
         {
-            OleDbDataAdapter data1 = new OleDbDataAdapter(MainFunc.getAll("repair"));
+            OleDbDataAdapter data1 = new OleDbDataAdapter(MainFunc.sql("SELECT " +
+                "repair_id, " +
+                "(SELECT mechanic_surname FROM mechanic WHERE repair.mechanic_id = mechanic.mechanic_id) AS [m_surname], " +
+                "(SELECT mechanic_name FROM mechanic WHERE repair.mechanic_id = mechanic.mechanic_id) AS [m_name], " +
+                "(SELECT mechanic_patronymic FROM mechanic WHERE repair.mechanic_id = mechanic.mechanic_id) AS [m_patronymic], " +
+                "(SELECT car_name FROM car WHERE repair.car_id = car.car_id) AS [model_car], " +
+                "(SELECT car_mark FROM car WHERE repair.car_id = car.car_id) AS [mark_car] " +
+                "FROM repair"));
             DataTable table1 = new DataTable();
             data1.Fill(table1);
             for (int curRow = 0; curRow < table1.Rows.Count; curRow++)
             {
-                string item = table1.Rows[curRow][0].ToString();
+                string item = table1.Rows[curRow][0].ToString() + ": " + table1.Rows[curRow][1].ToString() + " " + table1.Rows[curRow][2].ToString().Substring(0, 1) + ". " + table1.Rows[curRow][3].ToString().Substring(0, 1) + ". - " + table1.Rows[curRow][4].ToString() + " " + table1.Rows[curRow][5].ToString();
                 comboBox1.Items.Add(item);
             }
         }
