@@ -23,6 +23,7 @@ namespace carShowroom
         // Подключение класса с функциями
         Function MainFunc = new Function();
 
+        // Проверка поля на правильность ввода
         private bool checkInput()
         {
             try
@@ -45,12 +46,15 @@ namespace carShowroom
             return false;
         }
 
+        // Создание чека
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
+                // Проверка полей
                 if (checkInput())
                 {
+                    // Получение данных из таблицы
                     OleDbDataAdapter data1 = new OleDbDataAdapter(MainFunc.sql("SELECT " +
                         "repair_id, " +
                         "(SELECT mechanic_surname FROM mechanic WHERE repair.mechanic_id = mechanic.mechanic_id) AS [m_surname], " +
@@ -65,11 +69,14 @@ namespace carShowroom
                     DataTable table1 = new DataTable();
                     data1.Fill(table1);
 
-
+                    // Создание объекта ворда
                     Word.Application wordApp = new Word.Application();
+                    // Получение шаблона чека
                     Word.Document doc = wordApp.Documents.Add(Environment.CurrentDirectory + "\\check.docx");
+                    // Показать документ
                     wordApp.Visible = true;
 
+                    // Вывод данных в документ
                     doc.Bookmarks["number"].Range.Text = table1.Rows[0][0].ToString();
                     doc.Bookmarks["date"].Range.Text = table1.Rows[0][6].ToString();
                     doc.Bookmarks["worker"].Range.Text = table1.Rows[0][1].ToString() + " " + table1.Rows[0][2].ToString() + " " + table1.Rows[0][3].ToString();
@@ -84,13 +91,16 @@ namespace carShowroom
             }
         }
 
+        // Полное закрытие программы
         private void import_FormClosed(object sender, FormClosedEventArgs e)
         {
             Environment.Exit(0);
         }
 
+        // Загрузка формы импорта
         private void import_Load(object sender, EventArgs e)
         {
+            // Получение данных о заказах
             OleDbDataAdapter data1 = new OleDbDataAdapter(MainFunc.sql("SELECT " +
                 "repair_id, " +
                 "(SELECT mechanic_surname FROM mechanic WHERE repair.mechanic_id = mechanic.mechanic_id) AS [m_surname], " +
@@ -101,6 +111,8 @@ namespace carShowroom
                 "FROM repair"));
             DataTable table1 = new DataTable();
             data1.Fill(table1);
+
+            // Добавление записей в поле выбора
             for (int curRow = 0; curRow < table1.Rows.Count; curRow++)
             {
                 string item = table1.Rows[curRow][0].ToString() + ": " + table1.Rows[curRow][1].ToString() + " " + table1.Rows[curRow][2].ToString().Substring(0, 1) + ". " + table1.Rows[curRow][3].ToString().Substring(0, 1) + ". - " + table1.Rows[curRow][4].ToString() + " " + table1.Rows[curRow][5].ToString();
@@ -108,6 +120,7 @@ namespace carShowroom
             }
         }
 
+        // Открыть форму меню
         private void button3_Click(object sender, EventArgs e)
         {
             menu menu = new menu();
@@ -115,26 +128,34 @@ namespace carShowroom
             Hide();
         }
 
+        // Проверка правильности ввода при изменении поля выбора
         private void comboBox1_TextChanged(object sender, EventArgs e)
         {
             checkInput();
         }
 
+        // Импорт всех таблиц в Excel
         private void button2_Click(object sender, EventArgs e)
         {
+            // Соединение с базой
             string connect = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=" + MainFunc.db_name + ";";
             OleDbConnection ODConnect = new OleDbConnection(connect);
             ODConnect.Open();
 
+            // Создание Excel документа
             Excel.Application excelApp = new Excel.Application();
+            // Добавление листа
             var workBook = excelApp.Workbooks.Add(Type.Missing);
 
+            // Получение листа
             var mechanic = workBook.ActiveSheet;
+            // Имя листа
             mechanic.Name = "mechanic";
 
-            //
+            // Объект таблицы
             var mechanicCells = mechanic.Cells;
 
+            // Шапка
             mechanic.Cells[1, 1] = "mechanic_id";
             mechanic.Cells[1, 2] = "mechanic_number";
             mechanic.Cells[1, 3] = "mechanic_surname";
@@ -143,11 +164,13 @@ namespace carShowroom
             mechanic.Cells[1, 6] = "mechanic_exp";
             mechanic.Cells[1, 7] = "mechanic_rank";
 
+            // Получение данных
             OleDbCommand mechanicData = new OleDbCommand("SELECT * FROM mechanic;");
             mechanicData.Connection = ODConnect;
             mechanicData.ExecuteNonQuery();
             OleDbDataReader readerMechanic = mechanicData.ExecuteReader();
 
+            // Добовление данных в таблицу
             int temp = 2;
             while (readerMechanic.Read())
             {
@@ -163,12 +186,15 @@ namespace carShowroom
             mechanic.Columns.AutoFit();
             mechanic.Rows.AutoFit();
 
+            // Добавление листа
             var car = workBook.Sheets.Add(After: workBook.ActiveSheet);
+            // Имя листа
             car.Name = "car";
 
-            //
+            // Объект таблицы
             var carCells = car.Cells;
 
+            // Шапка
             car.Cells[1, 1] = "car_id";
             car.Cells[1, 2] = "car_number";
             car.Cells[1, 3] = "car_mark";
@@ -176,11 +202,13 @@ namespace carShowroom
             car.Cells[1, 5] = "car_type";
             car.Cells[1, 6] = "car_year";
 
+            // Получение данных
             OleDbCommand carData = new OleDbCommand("SELECT * FROM car;");
             carData.Connection = ODConnect;
             carData.ExecuteNonQuery();
             OleDbDataReader readerCar = carData.ExecuteReader();
 
+            // Добовление данных в таблицу
             temp = 2;
             while (readerCar.Read())
             {
@@ -195,12 +223,15 @@ namespace carShowroom
             car.Columns.AutoFit();
             car.Rows.AutoFit();
 
+            // Добавление листа
             var repair = workBook.Sheets.Add(After: workBook.ActiveSheet);
+            // Имя листа
             repair.Name = "repair";
 
-            //
+            // Объект таблицы
             var repairCells = repair.Cells;
 
+            // Шапка
             repair.Cells[1, 1] = "repair_id";
             repair.Cells[1, 2] = "mechanic_id";
             repair.Cells[1, 3] = "car_id";
@@ -208,11 +239,13 @@ namespace carShowroom
             repair.Cells[1, 5] = "repair_time";
             repair.Cells[1, 6] = "repair_cost";
 
+            // Получение данных
             OleDbCommand repairData = new OleDbCommand("SELECT * FROM repair;");
             repairData.Connection = ODConnect;
             repairData.ExecuteNonQuery();
             OleDbDataReader readerRepair = repairData.ExecuteReader();
 
+            // Добовление данных в таблицу
             temp = 2;
             while (readerRepair.Read())
             {

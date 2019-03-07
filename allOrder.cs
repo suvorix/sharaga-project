@@ -25,6 +25,7 @@ namespace carShowroom
             Hide();
         }
 
+        // Полное закрытие программы
         private void allOrder_FormClosed(object sender, FormClosedEventArgs e)
         {
             Environment.Exit(0);

@@ -18,11 +18,12 @@ namespace carShowroom
             InitializeComponent();
         }
 
+        // Полное закрытие программы
         private void addOrder_FormClosed(object sender, FormClosedEventArgs e)
         {
             Environment.Exit(0);
         }
-        
+        // Открыть форму меню
         private void button2_Click_1(object sender, EventArgs e)
         {
             menu menu = new menu();
@@ -33,8 +34,10 @@ namespace carShowroom
         // Подключение класса с функциями
         Function MainFunc = new Function();
 
+        // Загрузка формы добавление заказа
         private void addOrder_Load(object sender, EventArgs e)
         {
+            // Заполнение поля выбора механика
             OleDbDataAdapter data1 = new OleDbDataAdapter(MainFunc.getAll("mechanic"));
             DataTable table1 = new DataTable();
             data1.Fill(table1);
@@ -43,7 +46,7 @@ namespace carShowroom
                 string item = table1.Rows[curRow][0].ToString() + ": " + table1.Rows[curRow][2].ToString() + " " + table1.Rows[curRow][3].ToString() + " " + table1.Rows[curRow][4].ToString();
                 comboBox1.Items.Add(item);
             }
-
+            // Заполнение поля выбора машины
             OleDbDataAdapter data2 = new OleDbDataAdapter(MainFunc.getAll("car"));
             DataTable table2 = new DataTable();
             data2.Fill(table2);
@@ -59,6 +62,7 @@ namespace carShowroom
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e){ checkInput(); }
         private void textBox2_KeyUp(object sender, KeyEventArgs e) { checkInput(); }
 
+        // Проверка полей
         private bool checkInput()
         {
             try
@@ -89,6 +93,7 @@ namespace carShowroom
             return false;
         }
 
+        // Отчистка полей
         private void clearInput()
         {
             textBox2.Text = "";
@@ -97,6 +102,7 @@ namespace carShowroom
             textBox5.Text = "";
         }
 
+        // Кнопка добавления
         private void button1_Click(object sender, EventArgs e)
         {
             try

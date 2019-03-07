@@ -12,6 +12,7 @@ namespace carShowroom
     {
         public string db_name = "db.mdb";
 
+        // Функция SQL запроса
         public OleDbCommand sql(string query)
         {
             string connect = "Provider= Microsoft.Jet.OLEDB.4.0; Data Source=" + this.db_name + ";";
@@ -24,10 +25,13 @@ namespace carShowroom
             return sql;
         }
 
+        // Функция получения данных таблицы
         public OleDbCommand getAll(string table)
         {
             return this.sql("SELECT * FROM " + table + ";");
         }
+
+        // Проверка строки на соответствие регулярному выражению
         public bool stringTest(string str, string reg)
         {
             Regex regex = new Regex(reg);

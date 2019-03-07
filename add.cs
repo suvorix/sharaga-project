@@ -19,6 +19,7 @@ namespace carShowroom
             InitializeComponent();
         }
 
+        // Полное закрытие программы
         private void add_FormClosed(object sender, FormClosedEventArgs e)
         {
             Environment.Exit(0);
@@ -35,6 +36,7 @@ namespace carShowroom
         // Подключение класса с функциями
         Function MainFunc = new Function();
 
+        // Загрузка формы добавления
         private void add_Load(object sender, EventArgs e)
         {
             updateTables();
@@ -86,11 +88,13 @@ namespace carShowroom
             }
         }
 
+        // Проверка полей при изменении
         private void textBox4_KeyUp(object sender, KeyEventArgs e) { checkInputMechanic(); }
         private void comboBox1_TextChanged(object sender, EventArgs e) { checkInputMechanic(); }
         private void textBox9_KeyUp(object sender, KeyEventArgs e) { checkInputCar(); }
         private void comboBox2_TextChanged(object sender, EventArgs e) { checkInputCar(); }
-        
+
+        // Проверка полей механика
         private bool checkInputMechanic()
         {
             try
@@ -99,7 +103,7 @@ namespace carShowroom
                 if (textBox1.Text != "" && textBox2.Text != "" && textBox4.Text != "" && textBox5.Text != "" && textBox6.Text != "" && comboBox1.Text != "")
                 {
                     // Проверка полей на правильность ввода 
-                    if (MainFunc.stringTest(textBox1.Text, @"^[a-zA-Zа-яА-Я]*$") && MainFunc.stringTest(textBox2.Text, @"^[a-zA-Zа-яА-Я]*$") && MainFunc.stringTest(textBox6.Text, @"^[a-zA-Zа-яА-Я]*$") && MainFunc.stringTest(textBox4.Text, @"^[0-9]*$") && MainFunc.stringTest(textBox5.Text, @"^[0-9]*$"))
+                    if (MainFunc.stringTest(textBox1.Text, @"^[a-zA-Zа-яА-Я]*$") && MainFunc.stringTest(textBox2.Text, @"^[a-zA-Zа-яА-Я]*$") && MainFunc.stringTest(textBox6.Text, @"^[a-zA-Zа-яА-Я]*$") && MainFunc.stringTest(textBox4.Text, @"^[0-9]*$") && MainFunc.stringTest(textBox3.Text, @"^[0-9]*$") && MainFunc.stringTest(textBox5.Text, @"^[0-9]*$") && MainFunc.stringTest(textBox11.Text, @"^[0-9]*$"))
                     {
                         button1.Enabled = true;
                         return true;
@@ -121,15 +125,20 @@ namespace carShowroom
             return false;
         }
 
+        // Отчистка полей механика
         private void clearInputMechanic()
         {
             textBox4.Text = "";
             textBox1.Text = "";
             textBox2.Text = "";
             textBox6.Text = "";
+
+            textBox3.Text = "";
             textBox5.Text = "";
+            textBox11.Text = "";
         }
 
+        // Добавление механика
         private void addMechanic()
         {
             try
@@ -139,6 +148,7 @@ namespace carShowroom
 
                 if (checkInputMechanic())
                 {
+                    int exp = Convert.ToInt32(textBox3.Text) + Convert.ToInt32(textBox5.Text) * 30 + Convert.ToInt32(textBox11.Text) * 365;
                     // Добавление записи
                     MainFunc.sql("INSERT INTO mechanic VALUES (" +
                         temp + ", " +
@@ -146,7 +156,7 @@ namespace carShowroom
                         "'" + textBox1.Text + "', " +
                         "'" + textBox2.Text + "', " +
                         "'" + textBox6.Text + "', " +
-                        "'" + textBox5.Text + "', " +
+                        "'" + exp + "', " +
                         comboBox1.Text +
                         ");");
 
@@ -165,6 +175,7 @@ namespace carShowroom
             }
         }
 
+        // Проверка полей автомобиля
         private bool checkInputCar()
         {
             try
@@ -194,6 +205,7 @@ namespace carShowroom
             return false;
         }
 
+        // Отчистка полей машины
         private void clearInputCar()
         {
             textBox8.Text = "";
@@ -201,7 +213,7 @@ namespace carShowroom
             textBox10.Text = "";
             textBox7.Text = "";
         }
-
+        // Добавление машины
         private void addCar()
         {
             try
@@ -235,6 +247,7 @@ namespace carShowroom
             }
         }
 
+        // Кнопка добавления
         private void button1_Click(object sender, EventArgs e)
         {
             // Определяем что добавляем
