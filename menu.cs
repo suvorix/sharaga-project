@@ -17,10 +17,11 @@ namespace carShowroom
             InitializeComponent();
         }
 
-        // Закрытие программы
         private void button7_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            about about = new about();
+            about.Show();
+            Hide();
         }
 
         // Переход на форму добавления
@@ -67,6 +68,12 @@ namespace carShowroom
             import import = new import();
             import.Show();
             Hide();
+        }
+
+        // Закрытие программы
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
