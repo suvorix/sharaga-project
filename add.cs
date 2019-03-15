@@ -1,4 +1,6 @@
-﻿using System;
+﻿// This is an open source non-commercial project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com/
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -132,7 +134,7 @@ namespace carShowroom
             textBox1.Text = "";
             textBox2.Text = "";
             textBox6.Text = "";
-
+            comboBox1.SelectedIndex = -1;
             textBox3.Text = "";
             textBox5.Text = "";
             textBox11.Text = "";
@@ -212,6 +214,7 @@ namespace carShowroom
             textBox9.Text = "";
             textBox10.Text = "";
             textBox7.Text = "";
+            comboBox2.SelectedIndex = -1;
         }
         // Добавление машины
         private void addCar()
@@ -267,6 +270,21 @@ namespace carShowroom
         {
             if (tabControl1.SelectedIndex == 0) { checkInputMechanic(); }
             else if (tabControl1.SelectedIndex == 1) { checkInputCar(); }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            // Определяем что очищаем
+            if (tabControl1.SelectedIndex == 0)
+            {
+                // Очищаем механика
+                clearInputMechanic();
+            }
+            else if (tabControl1.SelectedIndex == 1)
+            {
+                // Очищаем машину
+                clearInputCar();
+            }
         }
     }
 }

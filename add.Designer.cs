@@ -84,6 +84,7 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -722,6 +723,7 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.button3);
             this.flowLayoutPanel1.Controls.Add(this.button2);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
@@ -745,7 +747,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(458, 6);
+            this.button2.Location = new System.Drawing.Point(252, 6);
             this.button2.Margin = new System.Windows.Forms.Padding(6);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(194, 42);
@@ -753,6 +755,17 @@
             this.button2.Text = "Назад";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(458, 6);
+            this.button3.Margin = new System.Windows.Forms.Padding(6);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(194, 42);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Очистить";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // add
             // 
@@ -872,5 +885,6 @@
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button button3;
     }
 }
