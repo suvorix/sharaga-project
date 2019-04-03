@@ -56,32 +56,12 @@
     <SolutionPath>F:\Nikita Suvorov\Производственная практика\sharaga-project\carShowroom.sln</SolutionPath>
     <SolutionVersion>15.0</SolutionVersion>
     <PlogVersion>5</PlogVersion>
-    <ModificationDate>2019-03-15T18:10:58.0416934Z</ModificationDate>
+    <ModificationDate>2019-04-03T16:58:05.1884628Z</ModificationDate>
   </Solution_Path>
   <PVS-Studio_Analysis_Log>
     <FavIcon>false</FavIcon>
-    <Level>1</Level>
-    <DefaultOrder>1</DefaultOrder>
-    <ErrorCode>V3001</ErrorCode>
-    <Message>There are identical sub-expressions 'MainFunc.stringTest(textBox2.Text, @"^[0-9]*$")' to the left and to the right of the '&amp;&amp;' operator.</Message>
-    <Project>carShowroom</Project>
-    <ShortFile>addOrder.cs</ShortFile>
-    <Line>76</Line>
-    <FalseAlarm>false</FalseAlarm>
-    <File>F:\Nikita Suvorov\Производственная практика\sharaga-project\addOrder.cs</File>
-    <CodePrev>1720035333</CodePrev>
-    <CodeCurrent>1672369078</CodeCurrent>
-    <CodeNext>123</CodeNext>
-    <TrialMessage>false</TrialMessage>
-    <Analyzer>4</Analyzer>
-    <LineExtension />
-    <Retired>false</Retired>
-    <AnalyzedSourceFiles />
-  </PVS-Studio_Analysis_Log>
-  <PVS-Studio_Analysis_Log>
-    <FavIcon>false</FavIcon>
     <Level>0</Level>
-    <DefaultOrder>2</DefaultOrder>
+    <DefaultOrder>1</DefaultOrder>
     <ErrorCode>V009</ErrorCode>
     <Message>To use free version of PVS-Studio, source code files are required to start with a special comment.</Message>
     <Project>carShowroom</Project>
@@ -101,7 +81,7 @@
   <PVS-Studio_Analysis_Log>
     <FavIcon>false</FavIcon>
     <Level>0</Level>
-    <DefaultOrder>3</DefaultOrder>
+    <DefaultOrder>2</DefaultOrder>
     <ErrorCode>V009</ErrorCode>
     <Message>To use free version of PVS-Studio, source code files are required to start with a special comment.</Message>
     <Project>carShowroom</Project>

@@ -73,7 +73,7 @@ namespace carShowroom
                 if (textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != "" && textBox5.Text != "" && comboBox1.Text != "" && comboBox2.Text != "")
                 {
                     // Проверка полей на правильность ввода
-                    if (MainFunc.stringTest(textBox2.Text, @"^[0-9]*$") && MainFunc.stringTest(textBox2.Text, @"^[0-9]*$") && MainFunc.stringTest(textBox3.Text, @"^[0-9]*$") && MainFunc.stringTest(textBox4.Text, @"^[0-9]*$") && MainFunc.stringTest(textBox5.Text, @"^[0-9]*$"))
+                    if (MainFunc.stringTest(textBox2.Text, @"^[0-9]*$") && MainFunc.stringTest(textBox3.Text, @"^[0-9]*$") && MainFunc.stringTest(textBox4.Text, @"^[0-9]*$") && MainFunc.stringTest(textBox5.Text, @"^[0-9]*$"))
                     {
                         button1.Enabled = true;
                         return true;

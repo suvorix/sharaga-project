@@ -1,0 +1,2 @@
+To use free version of PVS-Studio, source code files are required to start with a special comment.
+To use free version of PVS-Studio, source code files are required to start with a special comment.

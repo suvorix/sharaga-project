@@ -1,0 +1,3 @@
+FavIcon;Default order;Level;Error code;Message;Project;Short file;Line;False alarm;File;Analyzer;Analyzed source file(s)
+False;1;0;V009;To use free version of PVS-Studio, source code files are required to start with a special comment.;carShowroom;Program.cs;1;False;F:\Nikita Suvorov\Производственная практика\sharaga-project\Program.cs;Unknown;
+False;2;0;V009;To use free version of PVS-Studio, source code files are required to start with a special comment.;carShowroom;AssemblyInfo.cs;1;False;F:\Nikita Suvorov\Производственная практика\sharaga-project\Properties\AssemblyInfo.cs;Unknown;

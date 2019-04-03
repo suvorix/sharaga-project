@@ -1,0 +1,5 @@
+To use free version of PVS-Studio, source code files are required to start with a special comment.
+To use free version of PVS-Studio, source code files are required to start with a special comment.
+
+===============General Analysis (GA)===============
+F:\Nikita Suvorov\Производственная практика\sharaga-project\addOrder.cs (76): error V3001: There are identical sub-expressions 'MainFunc.stringTest(textBox2.Text, @"^[0-9]*$")' to the left and to the right of the '&&' operator.
