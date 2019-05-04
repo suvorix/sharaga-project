@@ -46,7 +46,8 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(580, 208);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Программу разработал студент группы ПС-15\r\nСуворов Никита Александрович\r\n\r\n2019";
+            this.label1.Text = "Информационная система по ведению базы данных «Автомастерская»\r\n\r\nПрограмму разра" +
+    "ботал студент группы ПС-15\r\nСуворов Никита Александрович\r\n\r\n2019";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel1
@@ -94,10 +95,10 @@
             this.ClientSize = new System.Drawing.Size(586, 321);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MinimumSize = new System.Drawing.Size(400, 360);
             this.Name = "about";
-            this.Text = "about";
+            this.Text = "Информация о разработчике";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.about_FormClosed);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

@@ -1,0 +1,17 @@
+F:\Nikita Suvorov\Производственная практика\sharaga-project\bin\Release\carShowroom.exe.config
+F:\Nikita Suvorov\Производственная практика\sharaga-project\bin\Release\carShowroom.exe
+F:\Nikita Suvorov\Производственная практика\sharaga-project\bin\Release\carShowroom.pdb
+F:\Nikita Suvorov\Производственная практика\sharaga-project\obj\Release\carShowroom.csprojAssemblyReference.cache
+F:\Nikita Suvorov\Производственная практика\sharaga-project\obj\Release\carShowroom.csproj.ResolveComReference.cache
+F:\Nikita Suvorov\Производственная практика\sharaga-project\obj\Release\carShowroom.about.resources
+F:\Nikita Suvorov\Производственная практика\sharaga-project\obj\Release\carShowroom.add.resources
+F:\Nikita Suvorov\Производственная практика\sharaga-project\obj\Release\carShowroom.addOrder.resources
+F:\Nikita Suvorov\Производственная практика\sharaga-project\obj\Release\carShowroom.allOrder.resources
+F:\Nikita Suvorov\Производственная практика\sharaga-project\obj\Release\carShowroom.edit.resources
+F:\Nikita Suvorov\Производственная практика\sharaga-project\obj\Release\carShowroom.import.resources
+F:\Nikita Suvorov\Производственная практика\sharaga-project\obj\Release\carShowroom.menu.resources
+F:\Nikita Suvorov\Производственная практика\sharaga-project\obj\Release\carShowroom.Properties.Resources.resources
+F:\Nikita Suvorov\Производственная практика\sharaga-project\obj\Release\carShowroom.csproj.GenerateResource.cache
+F:\Nikita Suvorov\Производственная практика\sharaga-project\obj\Release\carShowroom.csproj.CoreCompileInputs.cache
+F:\Nikita Suvorov\Производственная практика\sharaga-project\obj\Release\carShowroom.exe
+F:\Nikita Suvorov\Производственная практика\sharaga-project\obj\Release\carShowroom.pdb
